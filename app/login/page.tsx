@@ -5,85 +5,109 @@ import Image from "next/image";
 
 export default function Login() {
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-[#F8FAFC] font-sans">
+    <div className="h-screen w-full flex flex-col justify-center bg-gradient-to-br from-emerald-50 via-sky-50 to-indigo-50 font-sans overflow-hidden relative">
+      {/* BEGIN: Background Effects */}
+      <div className="absolute top-[-10%] left-[-10%] w-[35%] h-[45%] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-[-10%] right-[-5%] w-[35%] h-[45%] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+      {/* END: Background Effects */}
+
       {/* BEGIN: MainContent */}
-      <main className="flex-grow flex items-center justify-center p-4 lg:p-6">
-        <div className="max-w-6xl w-full bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row h-full min-h-[650px]">
-          
+      <main className="w-full h-full flex items-center justify-center p-6 relative z-10">
+        <div className="max-w-6xl w-full bg-white rounded-3xl overflow-hidden flex flex-col lg:flex-row h-full max-h-[640px] border border-emerald-200 shadow-[0_20px_50px_rgba(16,185,129,0.2)] ring-8 ring-white/50 relative z-20">
           {/* BEGIN: LeftHeroSection */}
           <section
-            className="hidden lg:flex w-1/2 relative bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlwtnB1q1lvpJbTNx-ACXovpOReMtgK9MctjXfAMEwclfHeEgS6Hq7oF9hAxEu_etCYI6iB1bH6aiZXYTC90kDgHsDFXf9cVMW6zKqVsQUEqPA8MCCzr6LGzvWPeXw7EqeBMB-wKUZuvnID76PVBiFN7JJrOOzk9qpnz5mKS3FlpJGiug1PKDz_6rfiTBN7UypgKOphll65HsjyZO2EQ5szN2BJGyiRViEZLruSOBeQTC7xf-q0AswZOZ9m8WymN6yUFWDsiA50iu-')",
-            }}
+            className="hidden lg:flex w-1/2 relative bg-cover bg-center bg-no-repeat overflow-hidden"
+            style={{ backgroundImage: "url('/images/features/login.jpg')" }}
           >
-            <div className="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-sm p-10 flex flex-col justify-between text-white">
+            {/* Nội dung đè lên trên nền */}
+            <div className="relative z-10 p-8 flex flex-col justify-between h-full w-full">
               {/* Logo & Brand */}
+              {/* CHUYỂN TỪ flex-col SANG HÀNG NGANG */}
               <div className="flex items-center gap-3">
-                <div className="bg-white p-2 rounded-lg">
-                  <i className="fa-solid fa-book-open text-primary text-lg"></i>
+                <div className="w-10 h-10 shrink-0 bg-emerald-500 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">
+                  <i className="fas fa-book-open"></i>
                 </div>
-                <h1 className="text-xl font-bold tracking-tight text-white drop-shadow-md">
-                  EduQuest <span className="text-primary">AI</span>
-                </h1>
+                <div>
+                  <h1 className="text-2xl font-bold text-gray-900 leading-none">
+                    EduQuest <span className="text-emerald-600">AI</span>
+                  </h1>
+                  <p className="text-[10px] text-gray-600 font-medium mt-1">
+                    Học thông minh, thi hiệu quả
+                  </p>
+                </div>
               </div>
 
-              {/* Hero Text */}
-              <div className="mt-12">
-                <h2 className="text-4xl font-extrabold mb-3 leading-tight drop-shadow-lg">
-                  Học thông minh<br />
-                  Thi hiệu quả
-                </h2>
-                <p className="text-base text-gray-100 max-w-sm drop-shadow-md">
-                  Nền tảng học tập tích hợp AI, giúp bạn hiểu sâu - luyện giỏi - đạt điểm cao
-                </p>
-              </div>
+              {/* Phần Text & Features ở nửa dưới */}
+              <div>
+                {/* Hero Text */}
+                <div className="mb-5">
+                  <h2 className="text-3xl font-extrabold mb-2 leading-tight text-gray-900">
+                    Học thông minh
+                    <br />
+                    Thi hiệu quả
+                  </h2>
+                  <p className="text-[14px] text-gray-700 max-w-sm font-medium leading-relaxed">
+                    Nền tảng học tập tích hợp AI, giúp bạn hiểu sâu - luyện giỏi
+                    - đạt điểm cao
+                  </p>
+                </div>
 
-              {/* Features List */}
-              <div className="mt-8 space-y-3">
-                <div className="flex items-start gap-3 bg-white/10 backdrop-blur-md p-3.5 rounded-xl border border-white/20">
-                  <div className="bg-purple-100 p-2.5 rounded-lg text-purple-600">
-                    <i className="fa-solid fa-book"></i>
+                {/* Features List */}
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 bg-white/60 hover:bg-white/80 transition-colors p-3 rounded-xl border border-white/50 shadow-sm">
+                    <div className="bg-purple-100 p-2 rounded-lg text-purple-600 shadow-sm">
+                      <i className="fa-solid fa-book text-sm"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-[13px] text-gray-900">
+                        Thư viện kiến thức
+                      </h3>
+                      <p className="text-[11px] text-gray-700 mt-0.5">
+                        Hệ thống kiến thức từ lớp 6 đến 12, đầy đủ và dễ hiểu
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-base">Thư viện kiến thức</h3>
-                    <p className="text-xs text-gray-200 mt-0.5">
-                      Hệ thống kiến thức từ lớp 6 đến 12, đầy đủ và dễ hiểu
-                    </p>
+
+                  <div className="flex items-start gap-3 bg-white/60 hover:bg-white/80 transition-colors p-3 rounded-xl border border-white/50 shadow-sm">
+                    <div className="bg-green-100 p-2 rounded-lg text-green-600 shadow-sm">
+                      <i className="fa-solid fa-pen-to-square text-sm"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-[13px] text-gray-900">
+                        Luyện tập thông minh
+                      </h3>
+                      <p className="text-[11px] text-gray-700 mt-0.5">
+                        Ngân hàng bài tập phong phú, cá nhân hóa theo năng lực
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start gap-3 bg-white/10 backdrop-blur-md p-3.5 rounded-xl border border-white/20">
-                  <div className="bg-green-100 p-2.5 rounded-lg text-green-600">
-                    <i className="fa-solid fa-pen-to-square"></i>
+
+                  <div className="flex items-start gap-3 bg-white/60 hover:bg-white/80 transition-colors p-3 rounded-xl border border-white/50 shadow-sm">
+                    <div className="bg-orange-100 p-2 rounded-lg text-orange-600 shadow-sm">
+                      <i className="fa-solid fa-chart-line text-sm"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-[13px] text-gray-900">
+                        Đề thi &amp; phân tích AI
+                      </h3>
+                      <p className="text-[11px] text-gray-700 mt-0.5">
+                        Thi thử online, chấm điểm và phân tích điểm mạnh - yếu
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-base">Luyện tập thông minh</h3>
-                    <p className="text-xs text-gray-200 mt-0.5">
-                      Ngân hàng bài tập phong phú, cá nhân hóa theo năng lực
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 bg-white/10 backdrop-blur-md p-3.5 rounded-xl border border-white/20">
-                  <div className="bg-orange-100 p-2.5 rounded-lg text-orange-600">
-                    <i className="fa-solid fa-chart-line"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-base">Đề thi &amp; phân tích AI</h3>
-                    <p className="text-xs text-gray-200 mt-0.5">
-                      Thi thử online, chấm điểm và phân tích điểm mạnh - yếu
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 bg-white/10 backdrop-blur-md p-3.5 rounded-xl border border-white/20">
-                  <div className="bg-blue-100 p-2.5 rounded-lg text-blue-600">
-                    <i className="fa-solid fa-robot"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-base">AI Tutor đồng hành</h3>
-                    <p className="text-xs text-gray-200 mt-0.5">
-                      Giải đáp mọi thắc mắc 24/7, giúp bạn học hiệu quả hơn
-                    </p>
+
+                  <div className="flex items-start gap-3 bg-white/60 hover:bg-white/80 transition-colors p-3 rounded-xl border border-white/50 shadow-sm">
+                    <div className="bg-blue-100 p-2 rounded-lg text-blue-600 shadow-sm">
+                      <i className="fa-solid fa-robot text-sm"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-[13px] text-gray-900">
+                        AI Tutor đồng hành
+                      </h3>
+                      <p className="text-[11px] text-gray-700 mt-0.5">
+                        Giải đáp mọi thắc mắc 24/7, giúp bạn học hiệu quả hơn
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -92,27 +116,34 @@ export default function Login() {
           {/* END: LeftHeroSection */}
 
           {/* BEGIN: RightLoginSection */}
-          <section className="w-full lg:w-1/2 p-6 lg:p-12 flex flex-col justify-center bg-white">
+          <section className="w-full lg:w-1/2 p-6 lg:p-8 flex flex-col justify-center bg-white relative z-10">
             <div className="max-w-[360px] mx-auto w-full">
               {/* Header */}
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-1.5">Chào mừng trở lại! 👋</h2>
-                <p className="text-sm text-gray-500">Đăng nhập để tiếp tục học tập</p>
+              <div className="text-center mb-5">
+                <h2 className="text-xl font-bold text-gray-900 mb-1">
+                  Chào mừng trở lại! 👋
+                </h2>
+                <p className="text-[13px] text-gray-500">
+                  Đăng nhập để tiếp tục học tập
+                </p>
               </div>
 
               {/* Login Form */}
-              <form className="space-y-4">
+              <form className="space-y-3.5">
                 {/* Email Input */}
                 <div>
-                  <label className="block text-[13px] font-medium text-gray-700 mb-1" htmlFor="email">
+                  <label
+                    className="block text-[13px] font-medium text-gray-700 mb-1.5"
+                    htmlFor="email"
+                  >
                     Email hoặc tên đăng nhập
                   </label>
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
                       <i className="fa-regular fa-envelope text-gray-400 text-sm"></i>
                     </div>
                     <input
-                      className="pl-9 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-primary focus:border-primary text-sm py-2.5"
+                      className="pl-10 block w-full rounded-xl border border-gray-300 hover:border-gray-400 shadow-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm py-2.5 outline-none transition-all"
                       id="email"
                       placeholder="nhapemail@example.com"
                       type="email"
@@ -122,34 +153,40 @@ export default function Login() {
 
                 {/* Password Input */}
                 <div>
-                  <label className="block text-[13px] font-medium text-gray-700 mb-1" htmlFor="password">
+                  <label
+                    className="block text-[13px] font-medium text-gray-700 mb-1.5"
+                    htmlFor="password"
+                  >
                     Mật khẩu
                   </label>
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
                       <i className="fa-solid fa-lock text-gray-400 text-sm"></i>
                     </div>
                     <input
-                      className="pl-9 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-primary focus:border-primary text-sm py-2.5"
+                      className="pl-10 pr-10 block w-full rounded-xl border border-gray-300 hover:border-gray-400 shadow-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm py-2.5 outline-none transition-all"
                       id="password"
                       placeholder="Nhập mật khẩu"
                       type="password"
                     />
-                    <div className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
-                      <i className="fa-regular fa-eye text-gray-400 hover:text-gray-600 text-sm"></i>
+                    <div className="absolute inset-y-0 right-0 pr-3.5 flex items-center cursor-pointer">
+                      <i className="fa-regular fa-eye text-gray-400 hover:text-gray-600 text-sm transition-colors"></i>
                     </div>
                   </div>
-                  <div className="flex justify-end mt-1.5">
-                    <Link className="text-[13px] text-secondary hover:text-indigo-500 font-medium" href="#">
+                  <div className="flex justify-end mt-2">
+                    <Link
+                      className="text-[12px] text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
+                      href="#"
+                    >
                       Quên mật khẩu?
                     </Link>
                   </div>
                 </div>
 
-                {/* Submit Button */}
+                {/* Submit Button*/}
                 <div className="pt-2">
                   <button
-                    className="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-primary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all"
+                    className="w-full flex justify-center px-6 py-3 rounded-xl font-bold text-sm text-white whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
                     type="submit"
                   >
                     Đăng nhập
@@ -158,53 +195,66 @@ export default function Login() {
               </form>
 
               {/* Divider */}
-              <div className="mt-6 relative">
-                <div aria-hidden="true" className="absolute inset-0 flex items-center">
+              <div className="mt-5 relative">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 flex items-center"
+                >
                   <div className="w-full border-t border-gray-200"></div>
                 </div>
                 <div className="relative flex justify-center">
-                  <span className="px-2 bg-white text-xs text-gray-400">hoặc đăng nhập với</span>
+                  <span className="px-2 bg-white text-[11px] text-gray-400">
+                    hoặc đăng nhập với
+                  </span>
                 </div>
               </div>
 
               {/* Social Login Buttons */}
-              <div className="mt-6 grid grid-cols-3 gap-2.5">
-                <button type="button" className="flex justify-center items-center py-2 border border-gray-300 rounded-lg shadow-sm bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors">
-                  <Image
-                    unoptimized
-                    alt="Google"
-                    width={16}
-                    height={16}
-                    className="h-4 w-4 mr-1.5"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKoZwFG4av_P401AFXwxFRUN-EINrNsnEo1oABK9clybIAxcSYvYJXGBtadz_R6inBSmv7juJZGL6lAuf6sHfhqmrU-C54yghfGQ-kHZ-1HrkPQeoCj4xKyfs06aHQ2iput15zGdm7siyWKOwqSQckrbFJIaLW69gHsagxGZKlzrbkkdgPCJ6yrMFQiGPZvR2Kbgij2C0a8tfrxU8c73X884w6H6J-m_CiHAbNZoC-4-dqzBws2_D9s09lx6FzWQ-1ntnPoOX6v3ib"
-                  />
+              <div className="mt-4 grid grid-cols-3 gap-2.5">
+                <button
+                  type="button"
+                  className="flex justify-center items-center py-2 border border-gray-300 rounded-xl shadow-sm bg-white text-[12px] font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+                >
+                  <i className="fa-brands fa-google text-[#DB4437] text-base mr-1.5"></i>
                   Google
                 </button>
-                <button type="button" className="flex justify-center items-center py-2 border border-gray-300 rounded-lg shadow-sm bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors">
-                  <i className="fa-brands fa-facebook text-[#1877F2] text-lg mr-1.5"></i>
+                <button
+                  type="button"
+                  className="flex justify-center items-center py-2 border border-gray-300 rounded-xl shadow-sm bg-white text-[12px] font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+                >
+                  <i className="fa-brands fa-facebook text-[#1877F2] text-base mr-1.5"></i>
                   Facebook
                 </button>
-                <button type="button" className="flex justify-center items-center py-2 border border-gray-300 rounded-lg shadow-sm bg-white text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors">
-                  <i className="fa-brands fa-github text-gray-900 text-lg mr-1.5"></i>
+                <button
+                  type="button"
+                  className="flex justify-center items-center py-2 border border-gray-300 rounded-xl shadow-sm bg-white text-[12px] font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+                >
+                  <i className="fa-brands fa-github text-gray-900 text-base mr-1.5"></i>
                   GitHub
                 </button>
               </div>
 
               {/* Register Link */}
-              <p className="mt-6 text-center text-[13px] text-gray-600">
+              <p className="mt-5 text-center text-[13px] text-gray-600">
                 Chưa có tài khoản?{" "}
-                <Link className="font-medium text-secondary hover:text-indigo-500" href="#">
+                <Link
+                  className="font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
+                  href="/register"
+                >
                   Đăng ký ngay
                 </Link>
               </p>
 
               {/* Security Notice */}
-              <div className="mt-8 bg-green-50 rounded-lg p-3.5 flex items-start gap-2.5 border border-green-100">
-                <i className="fa-solid fa-shield-halved text-green-600 mt-0.5 text-sm"></i>
+              <div className="mt-5 bg-green-50 rounded-xl p-3 flex items-start gap-2.5 border border-green-100">
+                <i className="fa-solid fa-shield-halved text-green-600 mt-0.5 text-xs"></i>
                 <div>
-                  <h4 className="text-[13px] font-medium text-green-800">An toàn &amp; bảo mật</h4>
-                  <p className="text-[11px] text-green-600 mt-0.5">
-                    Thông tin của bạn được bảo vệ tuyệt đối với công nghệ mã hóa hiện đại.
+                  <h4 className="text-[12px] font-semibold text-green-800">
+                    An toàn &amp; bảo mật
+                  </h4>
+                  <p className="text-[11px] text-green-600 mt-0.5 leading-tight">
+                    Thông tin của bạn được bảo vệ tuyệt đối với công nghệ mã hóa
+                    hiện đại.
                   </p>
                 </div>
               </div>
@@ -214,66 +264,6 @@ export default function Login() {
         </div>
       </main>
       {/* END: MainContent */}
-
-      {/* BEGIN: Footer */}
-      <footer className="bg-white border-t border-gray-200 py-4 mt-auto">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-6">
-            <div className="flex items-center gap-2">
-              <i className="fa-solid fa-users text-blue-500 text-base"></i>
-              <div>
-                <div className="font-bold text-gray-900 text-[13px]">50.000+</div>
-                <div className="text-[11px]">Học sinh đang học</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <i className="fa-solid fa-file-lines text-teal-500 text-base"></i>
-              <div>
-                <div className="font-bold text-gray-900 text-[13px]">10.000+</div>
-                <div className="text-[11px]">Bài tập &amp; đề thi</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <i className="fa-solid fa-arrow-trend-up text-green-500 text-base"></i>
-              <div>
-                <div className="font-bold text-gray-900 text-[13px]">98%</div>
-                <div className="text-[11px]">Học sinh tiến bộ</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <i className="fa-solid fa-headset text-purple-500 text-base"></i>
-              <div>
-                <div className="font-bold text-gray-900 text-[13px]">24/7</div>
-                <div className="text-[11px]">AI Tutor hỗ trợ</div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Links */}
-          <div className="flex flex-col md:flex-row items-center gap-3 text-xs">
-            <span className="font-medium text-gray-900">Về EduQuest AI</span>
-            <div className="flex gap-3">
-              <Link className="hover:text-gray-900 transition-colors" href="#">
-                Giới thiệu
-              </Link>
-              <span className="text-gray-300">|</span>
-              <Link className="hover:text-gray-900 transition-colors" href="#">
-                Điều khoản
-              </Link>
-              <span className="text-gray-300">|</span>
-              <Link className="hover:text-gray-900 transition-colors" href="#">
-                Chính sách bảo mật
-              </Link>
-              <span className="text-gray-300">|</span>
-              <Link className="hover:text-gray-900 transition-colors" href="#">
-                Liên hệ
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
-      {/* END: Footer */}
     </div>
   );
 }

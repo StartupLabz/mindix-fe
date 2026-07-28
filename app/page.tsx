@@ -8,95 +8,66 @@ export default function Home() {
       <header className="bg-white sticky top-0 z-50 shadow-sm overflow-visible">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-              <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                <i className="fas fa-book-open"></i>
+            
+            {/* --- CỤM BÊN TRÁI: LOGO + MENU --- */}
+            <div className="flex items-center gap-8 xl:gap-12">
+              {/* Logo */}
+              <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                  <i className="fas fa-book-open"></i>
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold text-gray-900 leading-none">
+                    EduQuest <span className="text-emerald-500">AI</span>
+                  </h1>
+                  <p className="text-[10px] text-gray-500 font-medium">
+                    Học thông minh, thi hiệu quả
+                  </p>
+                </div>
               </div>
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900 leading-none">
-                  EduQuest <span className="text-emerald-500">AI</span>
-                </h1>
-                <p className="text-[10px] text-gray-500 font-medium">
-                  Học thông minh, thi hiệu quả
-                </p>
-              </div>
-            </div>
 
-            {/* Navigation & Actions - */}
-            <div className="hidden lg:flex items-center ml-8 lg:ml-12 lg:gap-4 xl:gap-6 whitespace-nowrap">
-              {/* Menu Links */}
-              <nav className="flex items-center lg:gap-4 xl:gap-6">
-                <Link
-                  className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors"
-                  href="#"
-                >
+              {/* Navigation */}
+              <nav className="hidden lg:flex items-center gap-4 xl:gap-6 whitespace-nowrap">
+                <Link className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors" href="#">
                   Trang chủ
                 </Link>
-                <Link
-                  className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors"
-                  href="#"
-                >
+                <Link className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors" href="#">
                   Thư viện kiến thức
                 </Link>
-                <Link
-                  className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors"
-                  href="#"
-                >
+                <Link className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors" href="#">
                   Luyện tập
                 </Link>
-                <Link
-                  className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors"
-                  href="#"
-                >
+                <Link className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors" href="#">
                   Đề thi trực tuyến
                 </Link>
-                <Link
-                  className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors"
-                  href="#"
-                >
+                <Link className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors" href="#">
                   AI Tutor
                 </Link>
-                <Link
-                  className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors"
-                  href="#"
-                >
+                <Link className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors" href="#">
                   Bảng xếp hạng
                 </Link>
-                <Link
-                  className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors"
-                  href="#"
-                >
+                <Link className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-colors" href="#">
                   Blog
                 </Link>
               </nav>
-
-              {/* Vạch kẻ phân cách */}
-              <div className="h-5 w-px bg-gray-400 mx-1"></div>
-
-              {/* Auth Buttons */}
-              <div className="flex items-center gap-3 flex-wrap xl:flex-nowrap">
-                <div className="min-w-[220px] flex-1">
-                  <input
-                    className="w-full pl-4 pr-10 py-2 border border-gray-200 rounded-full text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
-                    placeholder="Tìm kiếm bài học..."
-                    type="text"
-                  />
-                </div>
-                <Link
-                  href="/login"
-                  className="text-gray-600 hover:text-emerald-500 font-medium text-sm whitespace-nowrap"
-                >
-                  Đăng nhập
-                </Link>
-                <Link
-                  href="/register"
-                  className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2.5 rounded-full font-medium text-sm transition-colors shadow-md whitespace-nowrap"
-                >
-                  Đăng ký
-                </Link>
-              </div>
             </div>
+
+            {/* --- CỤM BÊN PHẢI: ĐĂNG NHẬP/ĐĂNG KÝ --- */}
+            <div className="hidden lg:flex items-center gap-6">
+              <Link
+                href="/login"
+                className="text-gray-600 hover:text-emerald-500 font-medium text-sm whitespace-nowrap"
+              >
+                Đăng nhập
+              </Link>
+              <Link
+                href="/register"
+                className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2.5 rounded-full font-medium text-sm transition-colors shadow-md whitespace-nowrap"
+              >
+                Đăng ký
+              </Link>
+            </div>
+
           </div>
         </div>
       </header>
