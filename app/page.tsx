@@ -182,7 +182,7 @@ export default function Home() {
                 height={500}
                 alt="Học sinh học tập cùng AI"
                 className="w-full h-auto rounded-3xl shadow-2xl object-cover relative z-0"
-                src="../../images/landingpage.png"
+                src="../../images/features/landingpage.png"
               />
             </div>
           </div>

@@ -13,26 +13,31 @@ export default function RegisterPage() {
       <main className="w-full max-w-6xl bg-white rounded-3xl border border-emerald-200 shadow-[0_20px_50px_rgba(16,185,129,0.2)] ring-8 ring-white/50 overflow-hidden flex flex-col lg:flex-row h-full max-h-[640px] relative z-10">
         {/* BEGIN: LeftColumn (Branding & Features) */}
         <div className="hidden lg:flex w-1/2 relative flex-col p-8 h-full overflow-hidden">
-          {/* ẢNH NỀN LÀM MỜ: Tách riêng ảnh nền, dùng inset âm để tránh viền mờ màu trắng, thêm blur-[3px] */}
+          {/* ẢNH NỀN LÀM MỜ */}
           <div
             className="absolute inset-[-2%] bg-cover bg-center blur-[1px] z-0 pointer-events-none"
             style={{
-              backgroundImage: "url('/images/features/register.png')",
+              backgroundImage: "url('/images/features/login.jpg')",
             }}
           ></div>
 
-          {/* LỚP PHỦ MỚI: Phủ một lớp màu trắng mỏng (40%) để làm dịu ảnh, giúp chữ tối màu nổi bật hoàn toàn */}
+          {/* LỚP PHỦ MỚI */}
           <div className="absolute inset-0 bg-white/20 z-0 pointer-events-none"></div>
 
           <div className="relative z-10 flex flex-col h-full justify-start w-full">
             {/* Header/Logo */}
-            <div className="flex items-center gap-2 mb-12">
-              <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 shrink-0 bg-emerald-500 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">
                 <i className="fas fa-book-open"></i>
               </div>
-              <span className="text-xl font-bold text-gray-900">
-                EduQuest <span className="text-emerald-600">AI</span>
-              </span>
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900 leading-none">
+                  EduQuest <span className="text-emerald-600">AI</span>
+                </h1>
+                <p className="text-[10px] text-gray-600 font-medium mt-1">
+                  Học thông minh, thi hiệu quả
+                </p>
+              </div>
             </div>
 
             {/* Content */}
@@ -165,7 +170,6 @@ export default function RegisterPage() {
         {/* END: LeftColumn */}
 
         {/* BEGIN: RightColumn (Registration Form) */}
-        {/* Đổi lg:w-[55%] thành w-full lg:w-1/2 giống trang Login */}
         <div className="w-full lg:w-1/2 h-full p-6 lg:p-8 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           <div className="max-w-md mx-auto">
             {/* Form Header */}
@@ -567,50 +571,54 @@ export default function RegisterPage() {
                 </div>
               </div>
 
-              <p className="text-[13px] text-gray-600 text-center mt-3">
+              {/* Checkbox Điều khoản đã được căn giữa hoàn hảo */}
+              <div className="flex items-center gap-2.5 pt-2">
+                <input
+                  id="terms"
+                  type="checkbox"
+                  className="w-4 h-4 border-gray-300 rounded text-emerald-500 focus:ring-emerald-500 cursor-pointer shrink-0"
+                />
+                <label
+                  htmlFor="terms"
+                  className="text-[12px] text-gray-600 cursor-pointer leading-tight pt-0.5"
+                >
+                  Tôi đã đọc và đồng ý với{" "}
+                  <Link
+                    className="text-emerald-600 font-medium hover:underline transition-colors"
+                    href="#"
+                  >
+                    Điều khoản dịch vụ
+                  </Link>{" "}
+                  và{" "}
+                  <Link
+                    className="text-emerald-600 font-medium hover:underline transition-colors"
+                    href="#"
+                  >
+                    Chính sách bảo mật
+                  </Link>
+                </label>
+              </div>
+
+              {/* Submit Button */}
+              <div className="pt-2">
+                <button
+                  className="w-full flex justify-center px-6 py-3 rounded-xl font-bold text-sm text-white whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
+                  type="button"
+                >
+                  Đăng ký
+                </button>
+              </div>
+
+              {/* Back to Login link */}
+              <p className="text-[13px] text-gray-600 text-center mt-3 pb-4">
                 Đã có tài khoản?{" "}
                 <Link
-                  className="text-blue-500 font-medium hover:underline transition-colors"
+                  className="text-emerald-500 font-medium hover:underline transition-colors"
                   href="/login"
                 >
                   Đăng nhập
                 </Link>
               </p>
-
-              {/* Submit Button */}
-              <div className="pt-2">
-                <button
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl py-2.5 font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/30 outline-none"
-                  type="button"
-                >
-                  Tiếp tục
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                </button>
-              </div>
-
-              {/* Terms */}
-              <div className="text-center text-[11px] text-gray-500 mt-3 pb-4">
-                Bằng việc đăng ký, bạn đồng ý với{" "}
-                <Link className="text-blue-500 hover:underline" href="#">
-                  Điều khoản
-                </Link>{" "}
-                và{" "}
-                <Link className="text-blue-500 hover:underline" href="#">
-                  Bảo mật
-                </Link>
-              </div>
             </form>
           </div>
         </div>

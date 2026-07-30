@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
+
 export default function Login() {
   return (
     <div className="h-screen w-full flex flex-col justify-center bg-gradient-to-br from-emerald-50 via-sky-50 to-indigo-50 font-sans overflow-hidden relative">
@@ -176,7 +177,7 @@ export default function Login() {
                   <div className="flex justify-end mt-2">
                     <Link
                       className="text-[12px] text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
-                      href="#"
+                      href="/forgot-password"
                     >
                       Quên mật khẩu?
                     </Link>
@@ -239,7 +240,7 @@ export default function Login() {
                 Chưa có tài khoản?{" "}
                 <Link
                   className="font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
-                  href="/register"
+                  href="/verify-otp"
                 >
                   Đăng ký ngay
                 </Link>
