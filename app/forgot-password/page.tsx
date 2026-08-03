@@ -165,13 +165,13 @@ export default function ForgotPasswordPage() {
                 </div>
               </div>
               <div className="pt-2">
-                <button
+                <Link
                   className="w-full flex justify-center items-center gap-2 py-2.5 px-4 border border-transparent rounded-lg shadow-sm text-[13px] font-bold text-white bg-emerald-500 hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition-colors"
-                  type="submit"
+                  href="/verify-otp"
                 >
                   <i className="fa-regular fa-envelope"></i>
                   Gửi liên kết đặt lại
-                </button>
+                </Link>
               </div>
             </form>
 

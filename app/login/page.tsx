@@ -240,7 +240,7 @@ export default function Login() {
                 Chưa có tài khoản?{" "}
                 <Link
                   className="font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
-                  href="/verify-otp"
+                  href="/register"
                 >
                   Đăng ký ngay
                 </Link>

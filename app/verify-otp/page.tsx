@@ -49,7 +49,8 @@ export default function ForgotPasswordPage() {
                 Tiếp tục hành trình học tập
               </h2>
               <p className="text-gray-900 mb-6 text-[13px] leading-relaxed font-medium drop-shadow-md">
-                Chỉ cần nhập email, chúng tôi sẽ gửi liên kết đặt lại mật khẩu cho bạn.
+                Chỉ cần nhập email, chúng tôi sẽ gửi liên kết đặt lại mật khẩu
+                cho bạn.
               </p>
 
               {/* Feature Cards */}
@@ -64,7 +65,8 @@ export default function ForgotPasswordPage() {
                       Bảo mật tài khoản
                     </h3>
                     <p className="text-gray-700 text-[11px] mt-0.5 leading-tight">
-                      Chúng tôi bảo vệ tài khoản của bạn với công nghệ mã hóa tiên tiến
+                      Chúng tôi bảo vệ tài khoản của bạn với công nghệ mã hóa
+                      tiên tiến
                     </p>
                   </div>
                 </div>
@@ -94,7 +96,8 @@ export default function ForgotPasswordPage() {
                       Liên kết an toàn
                     </h3>
                     <p className="text-gray-700 text-[11px] mt-0.5 leading-tight">
-                      Liên kết đặt lại mật khẩu chỉ có hiệu lực trong thời gian ngắn
+                      Liên kết đặt lại mật khẩu chỉ có hiệu lực trong thời gian
+                      ngắn
                     </p>
                   </div>
                 </div>
@@ -182,6 +185,8 @@ export default function ForgotPasswordPage() {
                   <input
                     key={index}
                     type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
                     maxLength={1}
                     autoFocus={index === 0}
                     className={`w-[45px] h-[52px] sm:w-[50px] sm:h-[56px] text-center text-xl font-bold border rounded-xl outline-none transition-all ${
@@ -190,6 +195,10 @@ export default function ForgotPasswordPage() {
                         : "border-gray-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                     }`}
                     defaultValue={index === 0 ? "" : ""}
+                    onInput={(e) => {
+                      // Xóa tất cả các ký tự không phải là số (0-9)
+                      e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, "");
+                    }}
                   />
                 ))}
               </div>
@@ -204,7 +213,6 @@ export default function ForgotPasswordPage() {
                 className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl shadow-md shadow-emerald-500/20 transition-all flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
                 type="submit"
               >
-                
                 Xác nhận
               </button>
 
