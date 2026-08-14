@@ -191,6 +191,9 @@ export default function Login() {
                     type="submit"
                   >
                     Đăng nhập
+                    <Link href="/student/dashboard/" className="ml-2">
+                      {/* <i className="fa-solid fa-arrow-right text-sm"></i> */}
+                    </Link>
                   </button>
                 </div>
               </form>
