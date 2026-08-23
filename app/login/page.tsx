@@ -191,6 +191,9 @@ export default function Login() {
                     type="submit"
                   >
                     Đăng nhập
+                    <Link href="/student/dashboard/" className="ml-2">
+                      {/* <i className="fa-solid fa-arrow-right text-sm"></i> */}
+                    </Link>
                   </button>
                 </div>
               </form>
@@ -240,7 +243,7 @@ export default function Login() {
                 Chưa có tài khoản?{" "}
                 <Link
                   className="font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
-                  href="/verify-otp"
+                  href="/register"
                 >
                   Đăng ký ngay
                 </Link>
