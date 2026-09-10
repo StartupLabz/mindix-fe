@@ -1,12 +1,12 @@
 import AchievementSection from "@/features/student/dashboard/components/AchievementSection";
-import AiTutorBanner from "../components/AiTutorBanner";
-import DailyTasks from "../components/DailyTasks";
-import FavoriteSubjects from "../components/FavoriteSubjects";
-import LearningProgress from "../components/LearningProgress";
-import RecommendationSection from "../components/RecommendationSection";
-import StatsSection from "../components/StatsSection";
-import UpcomingSchedule from "../components/UpcomingSchedule";
-import WelcomeSection from "../components/WelcomeSection";
+import AiTutorBanner from "@/features/student/dashboard/components/AiTutorBanner";
+import DailyTasks from "@/features/student/dashboard/components/DailyTasks";
+import FavoriteSubjects from "@/features/student/dashboard/components/FavoriteSubjects";
+import LearningProgress from "@/features/student/dashboard/components/LearningProgress";
+import RecommendationSection from "@/features/student/dashboard/components/RecommendationSection";
+import StatsSection from "@/features/student/dashboard/components/StatsSection";
+import UpcomingSchedule from "@/features/student/dashboard/components/UpcomingSchedule";
+import WelcomeSection from "@/features/student/dashboard/components/WelcomeSection";
 
 export default function StudentDashboardPage() {
   return (
