@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function ExerciseFilter() {
@@ -195,13 +196,22 @@ export default function ExerciseFilter() {
               Xóa bộ lọc
             </button>
 
-            <button
+            {/* <button
               type="button"
+              className="flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-emerald-600 hover:shadow focus:outline-none focus:ring-4 focus:ring-emerald-500/20"
+            >
+              <Link href="/student/question-bank/exercise" className="absolute inset-0 z-10" />
+              <i className="fa-solid fa-wand-magic-sparkles" />
+              Tạo bài luyện tập
+            </button> */}
+
+            <Link
+              href="/student/practice"
               className="flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-emerald-600 hover:shadow focus:outline-none focus:ring-4 focus:ring-emerald-500/20"
             >
               <i className="fa-solid fa-wand-magic-sparkles" />
               Tạo bài luyện tập
-            </button>
+            </Link>
           </div>
         </div>
       </section>
